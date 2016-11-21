@@ -22,6 +22,8 @@ ORIGINAL_DIR = BASE_DIR / 'wr' / 'Audio' / 'FLAC Originals'
 FLAC_DIR = BASE_DIR / 'flac'
 MP3_DIR = BASE_DIR / 'dist' / 'Audio' / 'MP3'
 M4A_DIR = BASE_DIR / 'dist' / 'Audio' / 'M4A'
+ALBUM_COVER_PATH = BASE_DIR / 'wr' / 'CD Cover/Winter Retreat 2016 Cover.jpg'
+ALBUM_COVER_DATA = ALBUM_COVER_PATH.open('rb').read()
 
 def curly(s):
     md = markdown.markdown(s, extensions=['markdown.extensions.smarty'])
@@ -49,12 +51,13 @@ def short_name(s):
     }.get(s, s)
 
 def set_flac_tags(path, tags):
-    cmd = plumbum.local['metaflac']['--remove-all-tags', str(path)]
+    # cmd = plumbum.local['metaflac']['--remove-all-tags', str(path)]
     # print(cmd)
-    cmd()
     cmd = plumbum.local['metaflac']
+    cmd = cmd['--remove-all-tags']
     for field, value in tags.items():
         cmd = cmd['--set-tag=%s=%s' % (field.upper(), value)]
+    cmd = cmd['--import-picture-from=' + str(ALBUM_COVER_PATH)]
     cmd = cmd[str(path)]
     # print(cmd)
     cmd()
@@ -85,6 +88,15 @@ def set_mp3_tags(path, tags):
         else:
             print('Warning: unknown mp3 field map %s' % field)
         meta.add(frame)
+    meta.add(
+        mutagen.id3.APIC(
+            encoding=3,
+            mime='image/jpeg',
+            type=3, # 3 is for the cover image
+            desc='Cover',
+            data=ALBUM_COVER_DATA
+        )
+    )
     meta.save(str(path), v1=mutagen.id3.ID3v1SaveOptions.REMOVE)
 
 def add_description(meta):
@@ -170,14 +182,21 @@ for audio in data['audio']:
     print('Updating tags on %s' % mp3_path.name)
     set_mp3_tags(mp3_path, tags)
 
-    if not m4a_path.exists():
-        print("Encoding %s" % m4a_path.name)
-        plumbum.local['ffmpeg']('-i', str(flac_path),
-            '-c:a', 'libfdk_aac',
-            '-b:a', '128k',
-            '-movflags', '+faststart',
-            str(m4a_path)
-        )
+    # if not m4a_path.exists():
+    #     print("Encoding %s" % m4a_path.name)
+    #     plumbum.local['ffmpeg']('-i', str(flac_path),
+    #         '-c:a', 'libfdk_aac',
+    #         '-b:a', '128k',
+    #         '-movflags', '+faststart',
+    #         str(m4a_path)
+    #     )
     # m4a tags get set by ffmpeg
+
+    print('Updating tags on %s' % m4a_path)
+    plumbum.local['AtomicParsley'](
+        str(m4a_path),
+        '--artwork', str(ALBUM_COVER_PATH),
+        '--overWrite'
+    )
 
     n += 1
