@@ -38,7 +38,12 @@ def add_cover_data(meta, cache={}):
 def set_flac_tags(path, tags):
     # metaflac is much faster than mutagen
     cmd = plumbum.local['metaflac']
-    cmd = cmd['--remove-all-tags']
+    cmd = cmd['--remove-all']
+    cmd = cmd[str(path)]
+    PRINT_CMD and print(cmd)
+    NOOP or cmd()
+
+    cmd = plumbum.local['metaflac']
     for field, value in tags.items():
         if field == 'cover_data':
             continue
