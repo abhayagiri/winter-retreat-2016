@@ -1,66 +1,52 @@
 #!/usr/bin/env python
 
 import dateutil.parser
-import html
-import markdown
-import mutagen.easyid3
 import mutagen
 import mutagen.id3
-import mutagen.mp3
-import os
+import mutagen.mp4
+import mutagen.easymp4
 import pathlib
 import plumbum
 import shutil
-import taglib
-import re
-import unidecode
 import yaml
 
-BASE_DIR = (pathlib.Path(__file__) / '..').resolve()
-AUDIO_DATA_PATH = BASE_DIR / 'audio.yaml'
-ORIGINAL_DIR = BASE_DIR / 'wr' / 'Audio' / 'FLAC Originals'
-FLAC_DIR = BASE_DIR / 'flac'
-MP3_DIR = BASE_DIR / 'dist' / 'Audio' / 'MP3'
-M4A_DIR = BASE_DIR / 'dist' / 'Audio' / 'M4A'
-ALBUM_COVER_PATH = BASE_DIR / 'wr' / 'CD Cover/Winter Retreat 2016 Cover.jpg'
-ALBUM_COVER_DATA = ALBUM_COVER_PATH.open('rb').read()
+from common import *
 
-def curly(s):
-    md = markdown.markdown(s, extensions=['markdown.extensions.smarty'])
-    return html.unescape(re.sub(r'<.+?>', '', md))
+PRINT_CMD = False
+NOOP = False
 
-def array_to_mdlist(lst):
-    return '* ' + '\n* '.join(lst)
+def add_description(meta):
+    if 'description' in meta:
+        return
+    description = ('Read by %(reader)s on ' % meta) + \
+        meta['date'].strftime('%B %-d, %Y') + \
+        ' at Abhayagiri Buddhist Monastery.'
+    list_for_description = lambda items: '; '.join(map(curly, items))
+    if 'readings' in meta:
+        description += ' Readings: ' + \
+            list_for_description(meta['readings']) + '.'
+    if 'questions' in meta:
+        description += ' Questions: ' + \
+            list_for_description(meta['questions']) + '.'
+    meta['description'] = description
 
-def filenamey(s):
-    s = unidecode.unidecode(s)
-    s = re.sub(r'[^-_.,\'\w\s]', ' ', s)
-    s = re.sub(r'\s{2,}', ' ', s)
-    return s.strip()
-
-def short_name(s):
-    s = unidecode.unidecode(s)
-    s = re.sub(r'^ *(Ajahn|Tan|Samanera|Anagarika) *', '', s)
-    return {
-        'Pasanno': 'AP',
-        'Karunadhammo': 'AKd',
-        'Jotipalo': 'AJ',
-        'Naniko': 'AN',
-        'Debbie Stamp': 'Debbie',
-        'Beth Steff': 'Beth',
-    }.get(s, s)
+def add_cover_data(meta, cache={}):
+    if not cache:
+        cache['cover_data'] = ALBUM_COVER_PATH.open('rb').read()
+    meta['cover_data'] = cache['cover_data']
 
 def set_flac_tags(path, tags):
-    # cmd = plumbum.local['metaflac']['--remove-all-tags', str(path)]
-    # print(cmd)
+    # metaflac is much faster than mutagen
     cmd = plumbum.local['metaflac']
     cmd = cmd['--remove-all-tags']
     for field, value in tags.items():
+        if field == 'cover_data':
+            continue
         cmd = cmd['--set-tag=%s=%s' % (field.upper(), value)]
     cmd = cmd['--import-picture-from=' + str(ALBUM_COVER_PATH)]
     cmd = cmd[str(path)]
-    # print(cmd)
-    cmd()
+    PRINT_CMD and print(cmd)
+    NOOP or cmd()
 
 standard_mp3_tag_maps = {
     'title': 'TIT2',
@@ -85,71 +71,55 @@ def set_mp3_tags(path, tags):
             frame = mutagen.id3.COMM(encoding=3, language='eng', text=value)
         elif field == 'date':
             frame = mutagen.id3.TDRC(encoding=3, text=value[0:4])
+        elif field == 'cover_data':
+            frame = mutagen.id3.APIC(
+                encoding=3,
+                mime='image/jpeg',
+                type=3, # 3 is for the cover image
+                desc='Cover',
+                data=value
+            )
         else:
             print('Warning: unknown mp3 field map %s' % field)
         meta.add(frame)
-    meta.add(
-        mutagen.id3.APIC(
-            encoding=3,
-            mime='image/jpeg',
-            type=3, # 3 is for the cover image
-            desc='Cover',
-            data=ALBUM_COVER_DATA
+    NOOP or meta.save(str(path), v1=mutagen.id3.ID3v1SaveOptions.REMOVE)
+
+m4a_tag_mapping = {
+    'description': 'comment',
+}
+
+mutagen.easymp4.EasyMP4Tags.RegisterTextKey('cover', 'covr')
+
+def set_m4a_tags(path, tags):
+    meta = mutagen.easymp4.EasyMP4(str(path))
+    meta.delete()
+    for field, value in tags.items():
+        field = m4a_tag_mapping.get(field, field)
+        if field in ('license', 'organization', 'performer', 'cover_data'):
+            pass # no equivalent field
+        else:
+            meta.tags[field] = value
+    meta.tags['cover'] = [
+        mutagen.mp4.MP4Cover(
+            tags['cover_data'],
+            imageformat=mutagen.mp4.MP4Cover.FORMAT_JPEG
         )
-    )
-    meta.save(str(path), v1=mutagen.id3.ID3v1SaveOptions.REMOVE)
+    ]
+    NOOP or meta.save()
 
-def add_description(meta):
-    if 'description' in meta:
-        return
-    description = ('Read by %(reader)s on ' % meta) + \
-        meta['date'].strftime('%B %-d, %Y') + \
-        ' at Abhayagiri Buddhist Monastery.'
-    list_for_description = lambda items: '; '.join(map(curly, items))
-    if 'readings' in meta:
-        description += ' Readings: ' + \
-            list_for_description(meta['readings'])
-    if 'questions' in meta:
-        description += ' Questions: ' + \
-            list_for_description(meta['questions'])
-    meta['description'] = description
-
-def get_original_path(meta):
-    glob = meta.get('original_glob') or \
-        (meta['date'].strftime('%Y-%m-%d') + '*.flac')
-    tests = list(ORIGINAL_DIR.glob(glob))
-    if len(tests) == 1:
-        return tests[0]
-    else:
-        print(glob)
-        raise Exception('Could not find original for %s' % meta['title'])
-
-total = len(list(ORIGINAL_DIR.glob('*.flac')))
+data = get_audio_data()
+total = len(data['audio'])
 n = 1
+md = ''
 
-data = yaml.load(AUDIO_DATA_PATH.open('r', encoding='utf-8'))
-for audio in data['audio']:
-    meta = data['default'].copy()
-    meta.update(audio)
-    meta['date'] = dateutil.parser.parse(meta['date'])
-    meta['artist'] = meta.get('author') or meta['speaker']
-    meta['performer'] = meta.get('reader') or meta['speaker']
+for meta in data['audio']:
+
     add_description(meta)
+    add_cover_data(meta)
 
-    base_filename = filenamey(
-        meta['date'].strftime('%Y-%m-%d') + ' ' +
-        short_name(meta['performer'])
-    )
-    if 'speaker' in meta:
-        base_filename += ' ' + filenamey(meta['title'])
-    else:
-        base_filename += ' ' + filenamey('Reading %s by %s' % (
-            meta['title'],
-            meta['artist']
-        ))
-    flac_path = FLAC_DIR / (base_filename + '.flac')
-    mp3_path = MP3_DIR / (base_filename + '.mp3')
-    m4a_path = M4A_DIR / (base_filename + '.m4a')
+    flac_path = FLAC_DIR / (meta['base_filename'] + '.flac')
+    mp3_path = MP3_DIR / (meta['base_filename'] + '.mp3')
+    m4a_path = M4A_DIR / (meta['base_filename'] + '.m4a')
 
     tags = { key: meta[key] for key in [
         'title',
@@ -161,6 +131,7 @@ for audio in data['audio']:
         'organization',
         'copyright',
         'license',
+        'cover_data',
     ] }
     tags['tracknumber'] = '%02d/%d' % (n, total)
     tags['date'] = meta['date'].strftime('%Y-%m-%d')
@@ -168,7 +139,7 @@ for audio in data['audio']:
     if not flac_path.exists():
         original_path = get_original_path(meta)
         print('Copying original to %s' % flac_path.name)
-        shutil.copy(str(original_path), str(flac_path))
+        NOOP or shutil.copy(str(original_path), str(flac_path))
 
     print('Updating tags on %s' % flac_path.name)
     set_flac_tags(flac_path, tags)
@@ -178,25 +149,25 @@ for audio in data['audio']:
         chain = \
             plumbum.local['flac']['-c', '-d', str(flac_path)] | \
             plumbum.local['lame']['--cbr', '-b', '64', '-m', 'm', '-', str(mp3_path)]
-        chain(retcode=(0,-13))
+        PRINT_CMD and print(chain)
+        NOOP or chain(retcode=(0,-13))
+
     print('Updating tags on %s' % mp3_path.name)
     set_mp3_tags(mp3_path, tags)
 
-    # if not m4a_path.exists():
-    #     print("Encoding %s" % m4a_path.name)
-    #     plumbum.local['ffmpeg']('-i', str(flac_path),
-    #         '-c:a', 'libfdk_aac',
-    #         '-b:a', '128k',
-    #         '-movflags', '+faststart',
-    #         str(m4a_path)
-    #     )
-    # m4a tags get set by ffmpeg
+    if not m4a_path.exists():
+        print("Encoding %s" % m4a_path.name)
+        cmd = plumbum.local['ffmpeg']['-i', str(flac_path),
+            '-map_metadata', '-1',
+            '-c:a', 'libfdk_aac',
+            '-b:a', '128k',
+            '-movflags', '+faststart',
+            str(m4a_path)
+        ]
+        PRINT_CMD and print(cmd)
+        NOOP or cmd()
 
-    print('Updating tags on %s' % m4a_path)
-    plumbum.local['AtomicParsley'](
-        str(m4a_path),
-        '--artwork', str(ALBUM_COVER_PATH),
-        '--overWrite'
-    )
+    print('Updating tags on %s' % m4a_path.name)
+    set_m4a_tags(m4a_path, tags)
 
     n += 1
