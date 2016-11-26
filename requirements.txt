@@ -1,6 +1,7 @@
-python-dateutil>=2.6.0
+Jinja2>=2.8
 Markdown>=2.6.7
 mutagen>=1.35.1
 plumbum>=1.6.2
+python-dateutil>=2.6.0
 PyYAML>=3.12
 unidecode>=0.4.19

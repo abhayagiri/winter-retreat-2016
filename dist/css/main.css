@@ -1,0 +1,34 @@
+.navbar-brand img {
+  height: 1.2em;
+}
+
+nav {
+  font-size: 1.5em;
+}
+
+h2 {
+  background-color: #cec;
+  padding: 0.2em 1em;
+}
+
+.jp-audio, .jp-audio-stream, .jp-video {
+  font-family: serif;
+  border-color: #777;
+}
+
+#jquery-jplayer-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.entry {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.parallax-window {
+    min-height: 32em;
+    background: transparent;
+}

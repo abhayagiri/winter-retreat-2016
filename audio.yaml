@@ -4,6 +4,20 @@ default:
   copyright: 2016 Abhayagiri Buddhist Monastery. Licensed to the public under https://creativecommons.org/licenses/by-nc-nd/4.0/
   genre: Dhamma Readings
   license: https://creativecommons.org/licenses/by-nc-nd/4.0/
+images:
+  - DSC00003.JPG
+  - DSC00009.JPG
+  - DSC00034.JPG
+  - DSC00101.JPG
+  - DSC00110.JPG
+  - DSC00143.JPG
+  - DSC00178.JPG
+  - DSC00188.JPG
+  - DSC00208.JPG
+  - DSC00313.JPG
+  - DSC00362.JPG
+  - DSC00383.JPG
+  - DSC00391.JPG
 audio:
   -
     original_glob: '2016-01-05*Preliminary*.flac'
@@ -22,7 +36,9 @@ audio:
     date: January 5, 2016
     reader: Ajahn Karuṇadhammo
     readings:
-      - '"Apaṇṇaka Dhammas" pp. 71–81 in _Don''t Hold Back_ by Ajahn Pasanno'
+      -
+        text: '"Apaṇṇaka Dhammas" pp. 71–81 in _Don''t Hold Back_ by Ajahn Pasanno'
+        url: https://www.abhayagiri.org/books/dont-hold-back
     questions:
       - '[17:30] Ajahn Ñāniko asks about an alternate translation for "apaṇṇaka dhammas", namely "a safe bet."'
   -
@@ -31,14 +47,18 @@ audio:
     date: January 6, 2016
     reader: Ajahn Jotipālo
     readings:
-      - '"Walking Meditation" booklet by Ajahn Ñanadhammo'
+      -
+        text: '"Walking Meditation" booklet by Ajahn Ñanadhammo'
+        url: http://www.amaravati.org/dhamma-books/walking-meditation/
   -
     title: The Five Hindrances
     author: Ajahn Sumedho
     date: January 7, 2016
     reader: Ajahn Ñāniko
     readings:
-      - '"The Five Hindrances" pp. 35–44 in _Ajahn Sumedho, The Anthology, Vol.1_ by Ajahn Sumedho'
+      -
+        text: '"The Five Hindrances" pp. 35–44 in _Ajahn Sumedho, The Anthology, Vol.1_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-1---peace-is-a-simple-step
     questions:
       - '[23:38] Tan Kaccāna asks about the previous day''s reading, "Should we judge the quality of our meditation only by the time we spend in focused concentration?"'
   -
@@ -47,7 +67,9 @@ audio:
     date: January 10, 2016
     reader: Tan Jīvako
     readings:
-      - '"Purpose" pp. 133-145 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Purpose" pp. 133-145 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[24:40] Has anyone had personal experiences of Ajahn Paññavaddho?'
   -
@@ -56,7 +78,9 @@ audio:
     date: January 11, 2016
     reader: Tan Kassapo
     readings:
-      - '"The Path of Non Contention" pp. 215-217 in _Beginning Our Day, Vol.1_ by Ajahn Amaro'
+      -
+        text: '"The Path of Non Contention" pp. 215-217 in _Beginning Our Day, Vol.1_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/beginning-our-day-volume-one
     questions:
       - '[9:39] Sāmaṇera Jāgaro asks, "What is the relationship between truthfulness, the truth of the way things are, and metta?"'
   -
@@ -65,15 +89,21 @@ audio:
     date: January 12, 2016
     reader: Tan Kaccāna
     readings:
-      - '"Awe" pp. 50-53 in _Meditations, Vol.6_ by Ajahn Ṭhānissaro'
-      - '"Strengthening Mindfulness" online talk by Ajahn Ṭhānissaro on January 4, 2012'
+      -
+        text: '"Awe" pp. 50-53 in _Meditations, Vol.6_ by Ajahn Ṭhānissaro'
+        url: http://www.dhammatalks.org/Archive/Writings/CrossIndexed/Published/Meditations6/100121awe.pdf
+      -
+        text: '"Strengthening Mindfulness" online talk by Ajahn Ṭhānissaro on January 4, 2012'
+        url: http://www.dhammatalks.org/Archive/y2012/120104_Strengthening_Mindfulness.mp3
   -
     title: Presence
     author: Ajahn Paññavaddho
     date: January 13, 2016
     reader: Tan Pesalo
     readings:
-      - '"Presence" pp. 147-156 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Presence" pp. 147-156 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[21:11] Discussion about the Middle Way being different for different people.'
   -
@@ -82,8 +112,12 @@ audio:
     date: January 14, 2016
     reader: Tan Suhajjo
     readings:
-      - '"Where There''s a Will, There''s a Way" pp. 12-19'
-      - '"Bright Kamma" pp. 26-31 in _"Kamma and the End of Kamma"_ by Ajahn Sucitto'
+      -
+        text: '"Where There''s a Will, There''s a Way" pp. 12-19 in _"Kamma and the End of Kamma"_ by Ajahn Sucitto'
+        url: http://www.abhayagiri.org/books/kamma-and-the-end-of-kamma
+      -
+        text: '"Bright Kamma" pp. 26-31 in _"Kamma and the End of Kamma"_ by Ajahn Sucitto'
+        url: http://www.abhayagiri.org/books/kamma-and-the-end-of-kamma
     questions:
       - '[26:44] Discussion about the difference between sati and sampajañña.'
   -
@@ -92,7 +126,9 @@ audio:
     date: January 15, 2016
     reader: Tan Khantiko
     readings:
-      - '"Why Come to a Monastery?" online talk by Ajahn Candasiri in 1995'
+      -
+        text: '"Why Come to a Monastery?" online talk by Ajahn Candasiri in 1995'
+        url: http://www.abhayagiri.org/books/friends-on-the-path
     questions:
       - '[14:50] Comment and discussion about desire as natural, elimination of desire.'
       - '[19:56] Is desire a problem or is clinging to desire a problem?'
@@ -102,7 +138,9 @@ audio:
     date: January 18, 2016
     reader: Tan Gambhīro
     readings:
-      - '"The Beauty of Sila" pp. 57-68 in _The Forest Path_ by Ajahn Jayasaro'
+      -
+        text: '"The Beauty of Sila" pp. 57-68 in _The Forest Path_ by Ajahn Jayasaro'
+        url: http://www.abhayagiri.org/books/forest-path-%282nd-ed%29
     questions:
       - '[22:13] Discussion and examples of hiri and ottappa (moral shame and fear of wrongdoing).'
   -
@@ -111,8 +149,12 @@ audio:
     date: January 19, 2016
     reader: Sāmaṇera Kondañño
     readings:
-      - '"Levels of the Breath" pp. 44-48'
-      - '"The Four Jhanas" pp. 49-55 in _Meditations, Vol.5 _ by Ajahn Ṭhānissaro'
+      -
+        text: '"Levels of the Breath" pp. 44-48 in _Meditations, Vol.5 _ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/meditations5.html
+      -
+        text: '"The Four Jhanas" pp. 49-55 in _Meditations, Vol.5 _ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/meditations5.html
     questions:
       - '[26:48] Are breath energy and awareness the same thing?'
   -
@@ -121,7 +163,9 @@ audio:
     date: January 20, 2016
     reader: Sāmaṇera Jagaro
     readings:
-      - '"Cultivating Gratitude" a talk given by Ajahn Pasanno on November 10, 2009'
+      -
+        text: '"Cultivating Gratitude" a talk given by Ajahn Pasanno on November 18, 2009'
+        url: http://www.abhayagiri.org/audio/cultivating-gratitude
     questions:
       - '[15:49] Tan Pesalo asks, "During the development of Abhayagiri over the years, has there been a shift in how strictly some practices, activities are followed?"'
   -
@@ -130,7 +174,9 @@ audio:
     date: January 21, 2016
     reader: Anagārika Armand
     readings:
-      - '"Being Awareness Itself" pp. 363-374 in _Don''t Take Your Life Personally_ by Ajahn Sumedho'
+      -
+        text: '"Being Awareness Itself" pp. 363-374 in _Don''t Take Your Life Personally_ by Ajahn Sumedho'
+        url:
     questions:
       - '[31:14] Ajahn Pasanno reflects on Ajahn Sumedho.'
       - '[34:26] Anagārika Armand asks, "Can you recommend a book of koans for inspiration?"'
@@ -140,7 +186,9 @@ audio:
     date: January 22, 2016
     reader: Debbie Stamp
     readings:
-      - '"Khanti - Patient Endurance" online talk by Ajahn Jayasaro in 2008'
+      -
+        text: '"Khanti - Patient Endurance" online talk by Ajahn Jayasaro in 2008'
+        url: http://www.abhayagiri.org/books/the-real-practice
     questions:
       - '[25:29] Discussion about the idea of punishment in the vinaya'
       - '[28:34] Where does the story in the reading come from?'
@@ -150,7 +198,12 @@ audio:
     date: January 25, 2016
     reader: Beth Steff
     readings:
-      - '"What is the Timeless?" and "The Middle Way of Knowing Mental Formations" talks by Ajahn Vīradhammo at Tisarana Monastery in 2016'
+      -
+        text: '"What is the Timeless?" talk by Ajahn Vīradhammo at Tisarana Monastery in 2016'
+        url: https://tisarana.ca/what-is-the-timeless/
+      -
+        text: '"The Middle Way of Knowing Mental Formations" talk by Ajahn Vīradhammo at Tisarana Monastery in 2016'
+        url: https://tisarana.ca/the-middle-way-of-knowing-mental-formations/
     questions:
       - '[23:26] What does "apparent here and now" mean?'
   -
@@ -159,7 +212,9 @@ audio:
     date: January 26, 2016
     reader: Ajahn Karuṇadhammo
     readings:
-      - '"Head and Heart Together" in _booklet Head and Heart Together_ by Ajahn Ṭhānissaro'
+      -
+        text: '"Head and Heart Together" in _booklet Head and Heart Together_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/headandheartbook.pdf
     questions:
       - '[24:47] Comments on right view and skillful cause and effect regarding the brahmaviharas.'
       - '[26:21] Tan Pesalo asks, "Did Ajahn Chah emphasize generosity and service more for westerners than for Thais?'
@@ -170,8 +225,12 @@ audio:
     date: January 27, 2016
     reader: Ajahn Jotipālo
     readings:
-      - '"Invincibility" pp. 14-17 in _Seeing the Way, Vol.2 _ by Ajahn Khemadhammo'
-      - '"The Road Towards the Exit from the Prison of Hatred" online talk by Ajahn Khemadhammo at Amaravati, 2015'
+      -
+        text: '"Invincibility" pp. 14-17 in _Seeing the Way, Vol.2 _ by Ajahn Khemadhammo'
+        url: http://www.abhayagiri.org/books/seeing-the-way-volume-two
+      -
+        text: '"The Road Towards the Exit from the Prison of Hatred" online talk by Ajahn Khemadhammo at Amaravati, 2015'
+        url: http://www.amaravati.org/audio/the-road-towards-the-exit-from-the-prison-of-hatred/
     questions:
       - '[21:40] How has work with prisoners affected Ajahn Khemadhammo?'
       - '[25:03] Reflections about Ajahn Khemadhammo and his work with prisoners.'
@@ -181,8 +240,12 @@ audio:
     date: January 28, 2016
     reader: Ajahn Ñāniko
     readings:
-      - '"Hindrances and their Cessation" pp.47-51'
-      - '"Emptiness and Form" pp. 53-57 in _Ajahn Sumedho, The Anthology, Vol.2_ by Ajahn Sumedho'
+      -
+        text: '"Hindrances and their Cessation" pp.47-51 in _Ajahn Sumedho, The Anthology, Vol.2_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-2---seeds-of-understanding
+      -
+        text: '"Emptiness and Form" pp. 53-57 in _Ajahn Sumedho, The Anthology, Vol.2_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-2---seeds-of-understanding
     questions:
       - '[16:37] Is Ajahn Sumedho saying that art is always coming from a place of ego?'
       - '[17:47] Tan Kaccāna comments on the arising of self even in abstract thought; discussion about self in creative endeavors.'
@@ -192,7 +255,9 @@ audio:
     date: January 29, 2016
     reader: Tan Jīvako
     readings:
-      - '"Who will Feed the Mice?" booklet by Ajahn Amaro'
+      -
+        text: '"Who will Feed the Mice?" booklet by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/who-will-feed-the-mice
     questions:
       - '[18:47] Tan Suhajjo comments on the role of parents.'
   -
@@ -201,7 +266,9 @@ audio:
     date: January 30, 2016
     reader: Tan Kassapo
     readings:
-      - '"Recollecting Our Goodness" pp. 23-26 in _Beginning Our Day, Vol.1_ by Ajahn Amaro'
+      -
+        text: '"Recollecting Our Goodness" pp. 23-26 in _Beginning Our Day, Vol.1_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/beginning-our-day-volume-one
     questions:
       - '[11:58] At what point does it become unskillful to continue to reflect on one''s own good deeds?'
       - '[24:37] Discussion about how one assesses one''s practice; goal oriented habits; personalizing kamma and ones practice.'
@@ -211,7 +278,9 @@ audio:
     date: February 2, 2016
     reader: Tan Kaccāna
     readings:
-      - '"We are all Translators" pp. 23-34 in _Unexpected Freedom_ by Ajahn Munindo'
+      -
+        text: '"We are all Translators" pp. 23-34 in _Unexpected Freedom_ by Ajahn Munindo'
+        url: http://www.abhayagiri.org/books/unexpected-freedom
     questions:
       - '[25:09] The author mentions the virtue of using different techniques by different teachers in the practice. Was this part of your decision to choose this reading?'
   -
@@ -220,9 +289,11 @@ audio:
     date: February 3, 2016
     reader: Tan Pesalo
     readings:
-      - 'Excerpts from Rude Awakenings  by Ajahn Sucitto'
+      -
+        text: 'Excerpts from Rude Awakenings  by Ajahn Sucitto'
+        url: http://www.abhayagiri.org/books/rude-awakenings
     questions:
-      - '[29:42] Was your experience [in India] similar to what is described in the reading?'
+      - '[29:42] Was your experience (in India) similar to what is described in the reading?'
       - '[30:42] How did you have the opportunity to go to India?'
       - '[31:39] Tan Pesalo asks" In your time there, was there a big takeaway from your experience; or stories or experiences you would be willing to share?"'
   -
@@ -231,7 +302,9 @@ audio:
     date: February 4, 2016
     reader: Tan Suhajjo
     readings:
-      - '"Self" pp. 235-244 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Self" pp. 235-244 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[22:01] Did you have a chance to spend much time with Ajahn Paññavaddho?'
       - '[22:22] Tan Jīvako asks, "Can you say anything about the "voice of dhamma" versus the voice we hear inside our head?  is it like the voice of conscience?"'
@@ -241,7 +314,9 @@ audio:
     date: February 5, 2016
     reader: Tan Khantiko
     readings:
-      - '"Attammayata" pp. 110-122 in _The Island, The Anthology On Nibbana_ by Ajahn Amaro and Ajahn Pasanno'
+      -
+        text: '"Attammayata" pp. 110-122 in _The Island, The Anthology On Nibbana_ by Ajahn Amaro and Ajahn Pasanno'
+        url: http://www.abhayagiri.org/books/the-island
     questions:
       - '[29:50] Sāmaṇera Kondañño asks, "Can you provide guidance on the contemplation of conceiving, and name and form?"'
       - '[39:57] Tan Pesalo asks, "Can you restate Luang Por Dtun''s rendering of the Four Noble Truths?"'
@@ -252,7 +327,9 @@ audio:
     date: February 9, 2016
     reader: Tan Gambhīro
     readings:
-      - '"Body" pp. 190-198 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Body" pp. 190-198 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[15:48] Questions and discussion about contemplation of body, hair, teeth, nails, skin.'
       - '[18:34] Do you contemplate the body before you contemplate mind?'
@@ -264,7 +341,9 @@ audio:
     date: February 10, 2016
     reader: Sāmaṇera Kondañño
     readings:
-      - '"Five Piles of Bricks: the Khandas as Burden and Path" pp. 53 -58 in _The Karma of Questions_ by Ajahn Ṭhānissaro'
+      -
+        text: '"Five Piles of Bricks: the Khandas as Burden and Path" pp. 53 -58 in _The Karma of Questions_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/khandha.html
     questions:
       - '[18:55] Tan Kaccāna asks, "Is Ajahn Ṭhānissaro the first voice in a couple thousand years to propose that the khandas may not be a self, or is he drawing from another tradition?"'
       - '[19:53] Could you talk about practicing with intention?'
@@ -276,9 +355,15 @@ audio:
     date: February 11, 2016
     reader: Samanera Jagaro
     readings:
-      - '"Happiness Forever" pp. 9-10'
-      - '"Patience" pp. 65-68'
-      - '"All the Time in the World" pp. 51-52 in _Ajahn Sumedho, The Anthology, Vol.3_ by Ajahn Sumedho'
+      -
+        text: '"Happiness Forever" pp. 9-10 in _Ajahn Sumedho, The Anthology, Vol.3_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-3---direct-realization
+      -
+        text: '"Patience" pp. 65-68 in _Ajahn Sumedho, The Anthology, Vol.3_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-3---direct-realization
+      -
+        text: '"All the Time in the World" pp. 51-52 in _Ajahn Sumedho, The Anthology, Vol.3_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-3---direct-realization
     questions:
       - '[11:03] Why is trying to conquer pain a disaster?'
       - '[14:55] At what point in the Forest Tradition do you use a "warrior strategy" to conquer pain, defilements?'
@@ -288,8 +373,12 @@ audio:
     date: February 12, 2016
     reader: Anagārika Armand
     reading:
-      - '"In the Mood" pp. 31-33'
-      - '"Imagine" pp. 24-30 in _Meditations, Vol.1_ by Ajahn Ṭhānissaro'
+      -
+        text: '"In the Mood" pp. 31-33 in _Meditations, Vol.1_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/meditations.html
+      -
+        text: '"Imagine" pp. 24-30 in _Meditations, Vol.1_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/meditations.html
     questions:
       - '[24:01] Tan Kaccāna asks, " In working with the breath, when I try to spread well-being throughout the body, it seems to diminish.  how do I discern whether to maintain this feeling or go back to the more intense feeling?"'
       - '[26:27] Does insight arise from deeper concentration or can it also arise from different things?'
@@ -300,21 +389,27 @@ audio:
     date: February 14, 2016
     reader: Debbie Stamp
     readings:
-      - '"Reflecting on Beauty and Disappointment" a talk by Ajahn Vīradhammo at Berkeley Buddhist Monastery on November 3, 2015.'
+      -
+        text: '"Reflecting on Beauty and Disappointment" a talk by Ajahn Vīradhammo at Berkeley Buddhist Monastery on November 3, 2015.'
+        url: http://www.abhayagiri.org/audio/reflecting-on-beauty-and-disappointment
   -
     title: The One Who Knows
     author: Ajahn Kalyāno
     date: February 17, 2016
     reader: Beth Steff
     readings:
-      - '"The One Who Knows" an unpublished talk by Ajahn Kalyāno at Bodhiyana Monastery, Melbourne Australia on October 2012 (with permission).'
+      -
+        text: '"The One Who Knows" an unpublished talk by Ajahn Kalyāno at Bodhiyana Monastery, Melbourne Australia on October 2012 (with permission).'
+        url:
   -
     title: Alone Together
     author: Ajahn Munindo
     date: February 18, 2016
     reader: Ajahn Jotipālo
     readings:
-      - '"Alone Together" pp. 151-159  in _Unexpected Freedom_ by Ajahn Munindo'
+      -
+        text: '"Alone Together" pp. 151-159  in _Unexpected Freedom_ by Ajahn Munindo'
+        url: http://www.abhayagiri.org/books/unexpected-freedom
     questions:
       - '[17:39] Comments regarding spiritual friends and being a householder.'
       - '[18:56] Tan Kaccāna asks, "How much reading is appropriate?"'
@@ -325,7 +420,9 @@ audio:
     date: February 19, 2016
     reader: Ajahn Ñāniko
     readings:
-      - '"Identity" pp. 67-76 in _Ajahn Sumedho, The Anthology, Vol.4_ by Ajahn Sumedho'
+      -
+        text: '"Identity" pp. 67-76 in _Ajahn Sumedho, The Anthology, Vol.4_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-4---the-sound-of-silence
     questions:
       - '[21:41] Can I respond to my thoughts in ways that I think are useful?'
   -
@@ -334,7 +431,9 @@ audio:
     date: February 21, 2016
     reader: Tan Jīvako
     readings:
-      - '"Memory" pp.199-210 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Memory" pp.199-210 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[22:31] Comment about the meaning of sanna as memory.'
   -
@@ -343,7 +442,9 @@ audio:
     date: February 24, 2016
     reader: Tan Kassapo
     readings:
-      - '"Why am I Talking?" pp. 92-94 in _Beginning Our Day, Vol.2_ by Ajahn Amaro'
+      -
+        text: '"Why am I Talking?" pp. 92-94 in _Beginning Our Day, Vol.2_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/beginning-our-day-volume-two
     questions:
       - '[8:37]  recollection of teaching on mindfulness to develop right speech.'
   -
@@ -352,7 +453,9 @@ audio:
     date: February 25, 2016
     reader: Tan Kaccāna
     readings:
-      - '"The Wisdom of the Ego" pp. 44-49  in _Heart and Head Together_ by Ajahn Ṭhānissaro'
+      -
+        text: '"The Wisdom of the Ego" pp. 44-49  in _Heart and Head Together_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/headandheartbook.pdf
     questions:
       - '[22:56] Comments on skillful happiness and the need for patient endurance.'
       - '[24:34] Ajahn Jotipālo asks, "Regarding internal happiness, is part of our problem that we don''t have enough means to access it?"'
@@ -365,7 +468,9 @@ audio:
     date: February 26, 2016
     reader: Tan Pesalo
     readings:
-      - '"The Deathless Drum" excerpts from Chapter 9 in _Rude Awakenings_ by Ajahn Sucitto'
+      -
+        text: '"The Deathless Drum" excerpts from Chapter 9 in _Rude Awakenings_ by Ajahn Sucitto'
+        url: http://www.abhayagiri.org/books/rude-awakenings
     questions:
       - '[23:48] Ajahn Pasanno recollects time in India.'
       - '[27:10] Comments about decline of Buddhism in India; Buddhism not having a central physical location.'
@@ -375,7 +480,9 @@ audio:
     date: February 28, 2016
     reader: Tan Suhajjo
     readings:
-      - '"Feeling" pp. 211-220 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Feeling" pp. 211-220 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[22:26] Comments regarding mindfulness, the brahmaviharas, and radical acceptance'
       - '[26:49] Tan Pesalo asks, "What is the balance between sorting out feelings internally and expressing feelings externally, not repressing them?"'
@@ -385,7 +492,9 @@ audio:
     date: February 29, 2016
     reader: Tan Gambhīro
     readings:
-      - '"Citta" pp 246-256 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Citta" pp 246-256 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[23:03] The way Ajahn Paññavaddho describes Citta sounds like a soul? Can you discuss?'
       - '[30:34] Discussion about Thai Forest Masters describing Nibbana.'
@@ -397,8 +506,12 @@ audio:
     date: March 3, 2016
     reader: Sāmaṇera Kondañño
     readings:
-      - '"The Skill of Restraint"  pp. 83 in _Meditations, Vol.4_ by Ajahn Ṭhānissaro'
-      - '"Two Analogies"  pp. 32-36  in _The Paradox of Becoming_ by Ajahn Ṭhānissaro'
+      -
+        text: '"The Skill of Restraint"  pp. 83 in _Meditations, Vol.4_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/meditations4.html
+      -
+        text: '"Two Analogies"  pp. 32-36  in _The Paradox of Becoming_ by Ajahn Ṭhānissaro'
+        url: http://www.accesstoinsight.org/lib/authors/thanissaro/paradoxofbecoming.pdf
     questions:
       - '[23:44] Sāmaṇera Jāgaro asks, "Could you say something about the problem of swinging back and forth with restraint practices?"'
       - '[31:56] Would you speak on skillful and unskillful ways to approach restraint?'
@@ -409,7 +522,9 @@ audio:
     date: March 4, 2016
     reader: Sāmaṇera Jāgaro
     readings:
-      - '"Trusting in Wholesome Intentions" pp. 215-221 in _Ajahn Sumedho,The Anthology, Vol.5_ by Ajahn Sumedho'
+      -
+        text: '"Trusting in Wholesome Intentions" pp. 215-221 in _Ajahn Sumedho,The Anthology, Vol.5_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-5---the-wheel-of-truth
     questions:
       - '[15:27] How much did you have to adapt Ajahn Chah''s training for your own practice?'
       - '[19:10] Did Ajahn Chah have a common statement about his own core practice?'
@@ -421,7 +536,9 @@ audio:
     date: March 6, 2016
     reader: Anagārika Armand
     readings:
-      - '"Realizing Cessation" pp. 44-53  in _Small Boat, Great Mountain_ by Ajahn Amaro'
+      -
+        text: '"Realizing Cessation" pp. 44-53  in _Small Boat, Great Mountain_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/small-boat-great-mountain
     questions:
       - '[16:17] Did Ajahn Sumedho have a period when he was more influenced by Zen teachings?'
   -
@@ -430,7 +547,9 @@ audio:
     date: March 9, 2016
     reader: Debbie Stamp
     readings:
-      - '"Awareness: Nameless and Stopped" a blog post by Ajahn Sucitto'
+      -
+        text: '"Awareness: Nameless and Stopped" a blog post by Ajahn Sucitto'
+        url: http://ajahnsucitto.org/reflections/awareness-nameless-and-stopped/
     questions:
       - '[22:47] Does Abhayagiri have its own Korwat?'
       - '[24:31] Discussion about bowl washing; monastic training as living by example.'
@@ -442,7 +561,9 @@ audio:
     date: March 10, 2016
     reader: Beth Steff
     readings:
-      - '"Rebirth" pp. 163-165 and pp. 120-124 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+      -
+        text: '"Rebirth" pp. 163-165 and pp. 120-124 in _Uncommon Wisdom, Life and Teachings of Ajahn Paññavaddho_ by Ajahn Dick Silaratano'
+        url: http://www.forestdhamma.org/books/english/
     questions:
       - '[17:20] Beth asks, "Did you go to his cremation?"'
   -
@@ -451,7 +572,9 @@ audio:
     date: March 11, 2016
     reader: Ajahn Jotipālo
     readings:
-      - '"Relating to Hindrances" pp. 27-32 in _Working with the Five Hindrances_ by Ajahn Tiradhammo'
+      -
+        text: '"Relating to Hindrances" pp. 27-32 in _Working with the Five Hindrances_ by Ajahn Tiradhammo'
+        url: http://www.abhayagiri.org/books/working-with-the-five-hindrances
     questions:
       - '[14:32] Ajahn Ñāniko asks, "Where does the expression "sad is mad" come from?"'
       - '[15:36] Is sleepiness not dullness? Is there a separation?'
@@ -461,7 +584,9 @@ audio:
     date: March 13, 2016
     reader: Ajahn Ñāniko
     readings:
-      - '"Daughters and Sons" pp. 6-26 by Ajahn Jayasaro'
+      -
+        text: '"Daughters and Sons" pp. 6-26 by Ajahn Jayasaro'
+        url: http://www.amaravati.org/dhamma-books/daughters-and-sons/
     questions:
       - '[26:46] "Is it possible for a monastic to look after their parents while still practicing the vinaya?"'
       - '[31:45] Question and discussion about how monastics and lay practitioners can navigate visiting their relatives who are not Buddhists.'
@@ -472,7 +597,9 @@ audio:
     date: March 14, 2016
     reader: Tan Jīvako
     readings:
-      - '"The Gate of Relativity" in Kalyāṇa, Dhamma Talks from Ajahn Sucitto'
+      -
+        text: '"The Gate of Relativity" in Kalyāṇa, Dhamma Talks from Ajahn Sucitto'
+        url: http://www.abhayagiri.org/books/kalyana
     questions:
       - '[20:06] Question and discussion about neutral feeling and awareness.'
       - '[22:27] In what ways is neutral feeling delusion?'
@@ -483,7 +610,9 @@ audio:
     date: March 17 , 2016
     reader: Tan Kassapo
     readings:
-      - '"Santutthi and the Meaning of Contentment" pp. 2-4 in _Beginning Our Day, Vol.1_ by Ajahn Amaro'
+      -
+        text: '"Santutthi and the Meaning of Contentment" pp. 2-4 in _Beginning Our Day, Vol.1_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/beginning-our-day-volume-one
     questions:
       - '[9:10] Ajahn Jotipālo asks, "What are your thoughts about developing wholesome qualities when there are so many things that mask them?"'
       - '[13:17] Discussion of contentment as necessary for concentration; for interest in the breath.'
@@ -493,7 +622,9 @@ audio:
     date: March 18, 2016
     reader: Tan Kaccāna
     readings:
-      - '"Prayer and Devotion" pp. 124 -135 in _Unexpected Freedom_ by Ajahn Munindo'
+      -
+        text: '"Prayer and Devotion" pp. 124 -135 in _Unexpected Freedom_ by Ajahn Munindo'
+        url: http://www.abhayagiri.org/books/unexpected-freedom
     questions:
       - '[24:40] Tan Kaccāna asks, "How does your relic puja work for you?"'
       - '[27:55] Discussion of beneficial effects of prayer even without an external entity to which it is directed.'
@@ -503,7 +634,9 @@ audio:
     date: March 19, 2016
     reader: Tan Pesalo
     readings:
-      - '"The Treasure House" excerpts from chapter 10 in _Rude Awakenings_ by Ajahn Sucitto'
+      -
+        text: '"The Treasure House" excerpts from chapter 10 in _Rude Awakenings_ by Ajahn Sucitto'
+        url: http://www.abhayagiri.org/books/rude-awakenings
     questions:
       - '[25:48] Ajahn Pasanno describes his time in India with Ajahn Jayasaro.'
   -
@@ -512,7 +645,9 @@ audio:
     date: March 20, 2016
     reader: Tan Suhajjo
     readings:
-      - '"Basic Premises" pp. 7-16 in _With Each and Every Breath_ by Ajahn Ṭhānissaro'
+      -
+        text: '"Basic Premises" pp. 7-16 in _With Each and Every Breath_ by Ajahn Ṭhānissaro'
+        url: http://www.dhammatalks.org/Archive/Writings/EachAndEveryBreath_v130123.pdf
     questions:
       - '[21:20] Could you comment on the issue of feeling that there need to be certain conditions in place for me to practice?'
       - '[25:28] Sāmaṇera Kondañño asks about the differences between expansive knowing, concentration, and divided knowing or awareness; difference between viññāṇa and paññā.'
@@ -522,7 +657,9 @@ audio:
     date: March 21, 2016
     reader: Tan Khantiko
     readings:
-      - '"The First Noble Truth" pp. 14-28 in _The Four Noble Truths_ by Ajahn Sumedho'
+      -
+        text: '"The First Noble Truth" pp. 14-28 in _The Four Noble Truths_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-1---peace-is-a-simple-step
     questions:
       - '[32:36] Sāmaṇera Jāgaro asks, "What does "sabbe saṅkhārā dukkhā" mean in relation to the first Noble Truth?"'
   -
@@ -531,16 +668,24 @@ audio:
     date: March 24, 2016
     reader: Tan Gambhīro
     readings:
-      - '"Recollection of Hell" pp. 205-209'
-      - '"Pissing on Palaces" pp. 241-246 in _Meditations, Vol.6_ by Ajahn Ṭhānissaro'
+      -
+        text: '"Recollection of Hell" pp. 205-209 in _Meditations, Vol.6_ by Ajahn Ṭhānissaro'
+        url: http://www.dhammatalks.org/Archive/Writings/CrossIndexed/Published/Meditations6/100209_Recollection_of_Hell.pdf
+      -
+        text: '"Pissing on Palaces" pp. 241-246 in _Meditations, Vol.6_ by Ajahn Ṭhānissaro'
+        url: http://www.dhammatalks.org/Archive/Writings/CrossIndexed/Published/Meditations6/100409_Pissing_on_Palaces.pdf
   -
     title: Ancient Teachings on Non Abiding; Is the Sound Annoying You?
     author: Ajahn Amaro
     date: March 25, 2016
     reader: Sāmaṇera Kondañño
     readings:
-      - '"Ancient Teachings on Non Abiding" pp. 18-29'
-      - '"Is the Sound Annoying You?" pp. 66-72 in _Small Boat Great Mountain_ by Ajahn Amaro'
+      -
+        text: '"Ancient Teachings on Non Abiding" pp. 18-29 in _Small Boat Great Mountain_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/small-boat-great-mountain
+      -
+        text: '"Is the Sound Annoying You?" pp. 66-72 in _Small Boat Great Mountain_ by Ajahn Amaro'
+        url: http://www.abhayagiri.org/books/small-boat-great-mountain
     questions:
       - '[25:33] Tan Suhajjo asks, "Could you talk about how to integrate interaction and seclusion to develop citta viveka - mental seclusion?"'
       - '[28:20] Tan Pesalo asks, "What is the difference between upadhi viveka and citta viveka?"'
@@ -553,7 +698,9 @@ audio:
     date: March 26, 2016
     reader: Sāmaṇera Jāgaro
     readings:
-      - '"The Second Noble Truth" pp. 29-37 in _The Four Noble Truths_ by Ajahn Sumedho'
+      -
+        text: '"The Second Noble Truth" pp. 29-37 in _The Four Noble Truths_ by Ajahn Sumedho'
+        url: http://www.abhayagiri.org/books/ajahn-sumedho-anthology-volume-1---peace-is-a-simple-step
     questions:
       - '[35:10] Tan Kaccāna asks a question about views on whether the cause of suffering is desire or clinging to desire.'
   -
@@ -562,14 +709,18 @@ audio:
     date: March 27, 2016
     reader: Anagārika Armand
     readings:
-      - '"Sense the Sacred" pp.127-137 in _Don''t Take Your Life Personally_ by Ajahn Sumedho'
+      -
+        text: '"Sense the Sacred" pp.127-137 in _Don''t Take Your Life Personally_ by Ajahn Sumedho'
+        url:
   -
     title: Working with Perception
     author: Ajahn Sucitto
     date: March 28, 2016
     reader: Debbie Stamp
     readings:
-      - '"Working with Perception" in _The Insight Journal, Winter 2009 Barre Center for Buddhist Studies_ by Ajahn Sucitto'
+      -
+        text: '"Working with Perception" in _The Insight Journal, Winter 2009 Barre Center for Buddhist Studies_ by Ajahn Sucitto'
+        url: https://www.bcbsdharma.org/article/working-with-perception/
     questions:
       - '[28:11] What is a good question to pose to yourself to investigate perception?'
       - '[29:44] Discussion about perception and name and form.'
@@ -581,4 +732,6 @@ audio:
     date: March 29, 2016
     reader: Beth Steff
     readings:
-      - '"Parting Words" a talk by Ajahn Vīradhammo at Abhayagiri Buddhist Monastery on July 1, 2011'
+      -
+        text: '"Parting Words" a talk by Ajahn Vīradhammo at Abhayagiri Buddhist Monastery on July 1, 2011'
+        url: http://www.abhayagiri.org/audio/parting-words
