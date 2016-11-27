@@ -2,6 +2,7 @@
 
 import jinja2
 import markdown
+import re
 import time
 
 from common import *
@@ -24,8 +25,15 @@ def reading_to_markdown(item):
         return text
 
 
-def question_audio_to_markdown(text, audio_url):
-    return '[%s](%s)' % (text, audio_url)
+def audio_link(url, text, title=None):
+    matches = re.search(r'([0-9]+):([0-9]+)', text)
+    if matches:
+        time = int(matches.group(1)) * 60 + int(matches.group(2))
+    else:
+        time = 0
+    if not title:
+        title = text
+    return '<a href="%s" title="%s" data-time="%d">%s</a>' % (url, title, time, text)
 
 
 def get_main_html(data):
@@ -42,11 +50,11 @@ def get_main_html(data):
                 url = data['images'][0]
             if not url.startswith('http'):
                 url = 'img/' + url
-            html += '<div class="parallax-window" data-parallax="scroll" ' + \
+            html += '<div class="parallax-window" data-bleed="10" data-parallax="scroll" ' + \
                 ('data-image-src="%s"></div>' % url)
         html += '<div class="container entry %s">\n' % oddeven
         audio_url = 'DVD/Audio/MP3/' + meta['base_filename'] + '.mp3'
-        md = '## [%s](%s)\n\n' % (meta['title'], audio_url)
+        md = '<h2>' + audio_link(audio_url, meta['title']) + '</h2>'
         if 'speaker' in meta:
             md += '**%s**' % meta['speaker']
         else:
@@ -58,7 +66,7 @@ def get_main_html(data):
                 '\n\n'
         if 'questions' in meta:
             question_to_markdown = lambda text: \
-                question_audio_to_markdown(text, audio_url)
+                audio_link(audio_url, text, meta['title'])
             md += 'Questions:\n\n* ' + \
                 '\n* '.join(map(question_to_markdown, meta['questions'])) + \
                 '\n\n'

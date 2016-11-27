@@ -44,13 +44,10 @@ $(document).ready(function() {
     var a = $(event.currentTarget);
     var href = a.attr('href');
     var title = a.attr('title');
-    var skipMatches = a.text().match(/^([0-9]+):([0-9]+)$/);
-    if (skipMatches) {
-      var time = Number(skipMatches[1]) * 60 + Number(skipMatches[2]);
-    } else {
-      var time = 0;
-    }
+    var time = a.data('time') || 0;
     playAudio(href, title, time);
   });
+
+   $('a[href^="http"]').not('a[href$=".mp3"]').attr('target','_blank');
 
 })

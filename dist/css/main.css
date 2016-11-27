@@ -18,7 +18,7 @@ h2 {
 
 #jquery-jplayer-container {
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
   z-index: 10;
 }
@@ -29,6 +29,6 @@ h2 {
 }
 
 .parallax-window {
-    min-height: 32em;
+    height: 75vh;
     background: transparent;
 }

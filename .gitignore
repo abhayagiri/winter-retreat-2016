@@ -4,5 +4,6 @@ __pycache__
 /dist/DVD/Audio
 /dist/img/*.JPG
 /flac
+/node_modules
 /venv
 /wr

@@ -14,3 +14,11 @@ images:
 		dest=`basename "$$src"`; \
 		convert $$src -auto-orient -resize 1280 -strip dist/img/$$dest; \
 	done
+
+deploy:
+  #  ', '--delete',
+  # --dry-run
+	rsync --itemize-changes --exclude=.DS_Store \
+    -avz --rsh=ssh \
+    dist/ \
+    'abhayagiri@server.abhayagiri.org:www.abhayagiri.org/shared/public/media/discs/winter-retreat-2016/'

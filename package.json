@@ -1,0 +1,23 @@
+{
+  "name": "winter-retreat-2016",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhayagiri/winter-retreat-2016.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhayagiri/winter-retreat-2016/issues"
+  },
+  "homepage": "https://github.com/abhayagiri/winter-retreat-2016#readme",
+  "dependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "gulp-babel": "^6.1.2"
+  }
+}
