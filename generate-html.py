@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
+import html
 import jinja2
 import markdown
 import re
 import time
+import urllib
 
 from common import *
 
@@ -25,7 +27,7 @@ def reading_to_markdown(item):
         return text
 
 
-def audio_link(url, text, title=None):
+def audio_link(url, text, title, escape=True):
     matches = re.search(r'([0-9]+):([0-9]+)', text)
     if matches:
         time = int(matches.group(1)) * 60 + int(matches.group(2))
@@ -33,13 +35,20 @@ def audio_link(url, text, title=None):
         time = 0
     if not title:
         title = text
-    return '<a href="%s" title="%s" data-time="%d">%s</a>' % (url, title, time, text)
+    if escape:
+        text = html.escape(text)
+    return '<a href="%s" title="%s" data-time="%d">%s</a>' % (
+        urllib.parse.quote(url),
+        html.escape(title),
+        time,
+        text
+    )
 
 
 def get_main_html(data):
     n = 1
     i = 0
-    html = ''
+    result = ''
     for meta in data['audio']:
         oddeven = "odd" if n % 2 else "even"
         if n % IMAGE_SPREAD == 0:
@@ -50,16 +59,21 @@ def get_main_html(data):
                 url = data['images'][0]
             if not url.startswith('http'):
                 url = 'img/' + url
-            html += '<div class="parallax-window" data-bleed="10" data-parallax="scroll" ' + \
+            result += '<div class="parallax-window" data-bleed="10" data-parallax="scroll" ' + \
                 ('data-image-src="%s"></div>' % url)
-        html += '<div class="container entry %s">\n' % oddeven
+        result += '<div class="container entry %s">\n' % oddeven
         audio_url = 'DVD/Audio/MP3/' + meta['base_filename'] + '.mp3'
-        md = '<h2>' + audio_link(audio_url, meta['title']) + '</h2>'
+        md = '<h2>' + audio_link(audio_url,
+            html.escape(meta['title']) +
+            ' <span class="glyphicon glyphicon-headphones"></span>',
+            meta['title'], escape=False) + '</h2>\n'
         if 'speaker' in meta:
             md += '**%s**' % meta['speaker']
         else:
             md += '**%s** -- Read by %s' % (meta['author'], meta['reader'])
         md += ' -- %s\n\n' % meta['date'].strftime('%B %-d, %Y')
+        if 'description' in meta:
+            md += meta['description'] + '\n\n'
         if 'readings' in meta:
             md += 'Readings:\n\n* ' + \
                 '\n* '.join(map(reading_to_markdown, meta['readings'])) + \
@@ -70,19 +84,20 @@ def get_main_html(data):
             md += 'Questions:\n\n* ' + \
                 '\n* '.join(map(question_to_markdown, meta['questions'])) + \
                 '\n\n'
-        html += markdown.markdown(md, extensions=['markdown.extensions.smarty'])
-        html += '</div>\n'
+        result += markdown.markdown(md, extensions=['markdown.extensions.smarty'])
+        result += '</div>\n'
         n += 1
-    return html
+    return result
 
 
 def main():
     template = HTML_TEMPLATE_PATH.open('r', encoding='utf-8').read()
-    html = jinja2.Template(template).render(
-        main=get_main_html(get_audio_data()),
-        version_stamp=time.time()
+    HTML_DIST_PATH.open('w', encoding='utf-8').write(
+        jinja2.Template(template).render(
+            main=get_main_html(get_audio_data()),
+            version_stamp=time.time()
+        )
     )
-    HTML_DIST_PATH.open('w', encoding='utf-8').write(html)
 
 
 if __name__ == '__main__':
