@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abhayagiri Winter Retreat 2016</title>
+    <style>
+@-webkit-keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}@-moz-keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}@-ms-keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}@-moz-keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}@-webkit-keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}@-o-keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}@keyframes uil-ripple{0%{width:0;height:0;opacity:0;margin:0}33%{width:44%;height:44%;margin:-22% 0 0 -22%;opacity:1}100%{width:88%;height:88%;margin:-44% 0 0 -44%;opacity:0}}.uil-ripple-css{background:none;position:relative;width:250px;height:250px}.uil-ripple-css div{position:absolute;top:50%;left:50%;margin:0;width:0;height:0;opacity:0;border-radius:50%;border-width:6px;border-style:solid;-ms-animation:uil-ripple 4s ease-out infinite;-moz-animation:uil-ripple 4s ease-out infinite;-webkit-animation:uil-ripple 4s ease-out infinite;-o-animation:uil-ripple 4s ease-out infinite;animation:uil-ripple 4s ease-out infinite}.uil-ripple-css div:nth-of-type(1){border-color:#d9884e}.uil-ripple-css div:nth-of-type(2){border-color:#5c9622;-ms-animation-delay:2s;-moz-animation-delay:2s;-webkit-animation-delay:2s;-o-animation-delay:2s;animation-delay:2s}#loader{background-color:#633;position:absolute;left:0;top:0;width:100%;height:100%;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center}#offline-message{display:none;position:absolute;bottom:1em;left:0;width:100%;color:#fff;font-size:48px;text-align:center;z-index:10}body.offline #offline-message{display:block!important}
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class='uil-ripple-css' style='transform:scale(1);'><div></div></div>
+      <div id="offline-message">
+        No Internet connection detected...
+      </div>
+    </div>
+    <script>
+function requireJs(a,b){b=b||function(){};var c=document.createElement("script");c.src=a,c.onreadystatechange=function(){"loaded"!==c.readyState&&"complete"!==c.readyState||(c.onreadystatechange=null,b())},c.onload=b,document.head.appendChild(c)}function requireCss(a,b){b=b||function(){},filenode=document.createElement("link"),filenode.rel="stylesheet",filenode.type="text/css",filenode.href=a,document.head.appendChild(filenode),b()}
+
+if (!navigator.onLine) {
+  document.body.className += ' offline';
+}
+
+var dvdLoaderUrl = 'https://www.abhayagiri.org/media/discs/winter-retreat-2016/cd.js?v=1';
+
+requireJs(dvdLoaderUrl + '&' + new Date().getTime(), function() {});
+
+    </script>
+  </body>
+</html>

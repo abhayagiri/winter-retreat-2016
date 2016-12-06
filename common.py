@@ -12,8 +12,9 @@ BASE_DIR = (pathlib.Path(__file__) / '..').resolve()
 AUDIO_DATA_PATH = BASE_DIR / 'audio.yaml'
 ORIGINAL_DIR = BASE_DIR / 'wr' / 'Audio' / 'FLAC Originals'
 FLAC_DIR = BASE_DIR / 'flac'
-MP3_DIR = BASE_DIR / 'dist' / 'Audio' / 'MP3'
-M4A_DIR = BASE_DIR / 'dist' / 'Audio' / 'M4A'
+MP3_DIR = BASE_DIR / 'dist' / 'DVD' / 'Audio' / 'MP3'
+MP3_LQ_DIR = BASE_DIR / 'dist' / 'CD' / 'Audio'
+M4A_DIR = BASE_DIR / 'dist' / 'DVD' / 'Audio' / 'M4A'
 ALBUM_COVER_PATH = BASE_DIR / 'wr' / 'CD Cover/Winter Retreat 2016 Cover.jpg'
 
 

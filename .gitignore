@@ -1,6 +1,7 @@
 __pycache__
 .DS_Store
 /attic
+/dist/CD/Audio
 /dist/DVD/Audio
 /dist/img/*.JPG
 /flac

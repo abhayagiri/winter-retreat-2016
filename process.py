@@ -21,7 +21,8 @@ def add_description(meta):
     description = ('Read by %(reader)s on ' % meta) + \
         meta['date'].strftime('%B %-d, %Y') + \
         ' at Abhayagiri Buddhist Monastery.'
-    list_for_description = lambda items: '; '.join(map(curly, items))
+    textify = lambda s: s['text'] if type(s) is dict else s
+    list_for_description = lambda items: '; '.join(map(curly, map(textify, items)))
     if 'readings' in meta:
         description += ' Readings: ' + \
             list_for_description(meta['readings']) + '.'
@@ -124,6 +125,7 @@ for meta in data['audio']:
 
     flac_path = FLAC_DIR / (meta['base_filename'] + '.flac')
     mp3_path = MP3_DIR / (meta['base_filename'] + '.mp3')
+    mp3_lq_path = MP3_LQ_DIR / (meta['base_filename'] + '.mp3')
     m4a_path = M4A_DIR / (meta['base_filename'] + '.m4a')
 
     tags = { key: meta[key] for key in [
@@ -149,30 +151,42 @@ for meta in data['audio']:
     print('Updating tags on %s' % flac_path.name)
     set_flac_tags(flac_path, tags)
 
-    if not mp3_path.exists():
-        print("Encoding %s" % mp3_path.name)
+    # if not mp3_path.exists():
+    #     print("Encoding %s" % mp3_path.name)
+    #     chain = \
+    #         plumbum.local['flac']['-c', '-d', str(flac_path)] | \
+    #         plumbum.local['lame']['--cbr', '-b', '64', '-m', 'm', '-', str(mp3_path)]
+    #     PRINT_CMD and print(chain)
+    #     NOOP or chain(retcode=(0,-13))
+
+    # print('Updating tags on %s' % mp3_path.name)
+    # set_mp3_tags(mp3_path, tags)
+
+    if not mp3_lq_path.exists():
+        mp3_lq_path.parent.mkdir(parents=True, exist_ok=True)
+        print("Encoding %s" % mp3_lq_path.name)
         chain = \
             plumbum.local['flac']['-c', '-d', str(flac_path)] | \
-            plumbum.local['lame']['--cbr', '-b', '64', '-m', 'm', '-', str(mp3_path)]
+            plumbum.local['lame']['--cbr', '-b', '48', '-m', 'm', '-', str(mp3_lq_path)]
         PRINT_CMD and print(chain)
         NOOP or chain(retcode=(0,-13))
 
-    print('Updating tags on %s' % mp3_path.name)
-    set_mp3_tags(mp3_path, tags)
+    print('Updating tags on %s' % mp3_lq_path.name)
+    set_mp3_tags(mp3_lq_path, tags)
 
-    if not m4a_path.exists():
-        print("Encoding %s" % m4a_path.name)
-        cmd = plumbum.local['ffmpeg']['-i', str(flac_path),
-            '-map_metadata', '-1',
-            '-c:a', 'libfdk_aac',
-            '-b:a', '128k',
-            '-movflags', '+faststart',
-            str(m4a_path)
-        ]
-        PRINT_CMD and print(cmd)
-        NOOP or cmd()
+    # if not m4a_path.exists():
+    #     print("Encoding %s" % m4a_path.name)
+    #     cmd = plumbum.local['ffmpeg']['-i', str(flac_path),
+    #         '-map_metadata', '-1',
+    #         '-c:a', 'libfdk_aac',
+    #         '-b:a', '128k',
+    #         '-movflags', '+faststart',
+    #         str(m4a_path)
+    #     ]
+    #     PRINT_CMD and print(cmd)
+    #     NOOP or cmd()
 
-    print('Updating tags on %s' % m4a_path.name)
-    set_m4a_tags(m4a_path, tags)
+    # print('Updating tags on %s' % m4a_path.name)
+    # set_m4a_tags(m4a_path, tags)
 
     n += 1
